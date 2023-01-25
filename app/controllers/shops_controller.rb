@@ -3,6 +3,10 @@ class ShopsController < ApplicationController
     @shops = Shop.all
   end
 
+  def show
+    @shop = Shop.find(params[:id])
+  end
+
   def create
     @shop = shop.new(shop_params)
     @shop.save

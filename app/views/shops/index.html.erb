@@ -5,7 +5,7 @@
       <%= image_tag("image.jpg", class:"card-img-top", alt: "shop picture") %>
       <div class="card-body d-flex justify-content-center flex-column">
         <h5 class="card-title text-center mb-3"><%= shop.name %></h5>
-        <a href="#" class="btn btn-secondary">Voir plus</a>
+        <%= link_to "Voir plus", shop_path(shop), class: "btn btn-secondary" %>
       </div>
     </div>
   <% end %>
