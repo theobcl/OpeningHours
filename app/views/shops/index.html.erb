@@ -1,5 +1,12 @@
-<ul>
+<h1 class="mb-4">Nos Magasins :</h1>
+<div class="row d-flex justify-content-between">
   <% @shops.each do |shop| %>
-    <li><%= shop.name %></li>
+    <div class="card col-4 mb-4 p-0" style="width: 18rem;">
+      <%= image_tag("image.jpg", class:"card-img-top", alt: "shop picture") %>
+      <div class="card-body d-flex justify-content-center flex-column">
+        <h5 class="card-title text-center mb-3"><%= shop.name %></h5>
+        <a href="#" class="btn btn-secondary">Voir plus</a>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>

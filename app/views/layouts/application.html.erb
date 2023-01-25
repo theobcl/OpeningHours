@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LeCollectionist</title>
+    <title>Le Collectionist</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render partial: "shared/header" %>
+
+    <div id="mainContent" class="container py-5">
+      <%= yield %>
+    </div>
+
+    <%= render partial: "shared/footer" %>
   </body>
 </html>
