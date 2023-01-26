@@ -6,7 +6,7 @@ class OpeningHour < ApplicationRecord
 
   validates :shop_id, presence: true
   validates :day, presence: true, inclusion: { in: 0..6 }
-  # validates :is_closed, presence: true
+  validates :is_closed, inclusion: { in: [true, false] }
   validates :start_at, presence: true, unless: :is_closed
   validates :end_at, presence: true, unless: :is_closed
 
