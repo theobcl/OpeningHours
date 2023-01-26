@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shop: one
+  day: 1
+  is_closed: false
+  start_at: 2023-01-26 17:36:32
+  end_at: 2023-01-26 17:36:32
+
+two:
+  shop: two
+  day: 1
+  is_closed: false
+  start_at: 2023-01-26 17:36:32
+  end_at: 2023-01-26 17:36:32
