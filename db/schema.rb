@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_26_212648) do
+ActiveRecord::Schema.define(version: 2023_01_26_215510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "opening_hours", force: :cascade do |t|
     t.bigint "shop_id", null: false
-    t.integer "day"
+    t.string "day"
     t.boolean "is_closed", default: false
     t.time "start_at"
     t.time "end_at"

@@ -1,11 +1,11 @@
 class OpeningHour < ApplicationRecord
   belongs_to :shop
 
-  # extend Enumerize
-  # enumerize :day, in: [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
+  extend Enumerize
+  enumerize :day, in: [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
 
   validates :shop_id, presence: true
-  validates :day, presence: true, inclusion: { in: 0..6 }
+  validates :day, presence: true
   validates :is_closed, inclusion: { in: [true, false] }
   validates :start_at, presence: true, unless: :is_closed
   validates :end_at, presence: true, unless: :is_closed
