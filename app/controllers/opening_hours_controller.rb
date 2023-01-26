@@ -1,5 +1,9 @@
 class OpeningHoursController < ApplicationController
-  before_action :set_shop, only: %i[create]
+  before_action :set_shop, only: %i[index create]
+
+  def index
+    @opening_hours = @shop.opening_hours
+  end
 
   def create
     @opening_hour = OpeningHour.new(opening_hour_params)
