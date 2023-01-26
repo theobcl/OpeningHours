@@ -14,4 +14,6 @@ class OpeningHour < ApplicationRecord
 
   validates_uniqueness_of :day, scope: :shop_id, conditions: -> { where(is_closed: true) }, message: "can only have one closed time for a given day"
   validates_uniqueness_of :day, scope: :shop_id, conditions: -> { where(is_closed: false) }, limit: 2, message: "can't have more than two opening hour for the same day"
+
+  # TO DO : make sure there is no overlaping hours for the same opening day
 end
