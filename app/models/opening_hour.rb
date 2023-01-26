@@ -10,7 +10,7 @@ class OpeningHour < ApplicationRecord
   validates :start_at, presence: true, unless: :is_closed
   validates :end_at, presence: true, unless: :is_closed
 
-  # validates_time :start_at, before: :end_at, unless: :is_closed
+  validates_time :start_at, before: :end_at, unless: :is_closed
 
   validates_uniqueness_of :day, scope: :shop_id, conditions: -> { where(is_closed: true) }, message: "can only have one closed time for a given day"
   validates_uniqueness_of :day, scope: :shop_id, conditions: -> { where(is_closed: false) }, limit: 2, message: "can't have more than two opening hour for the same day"
