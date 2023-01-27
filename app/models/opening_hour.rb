@@ -12,8 +12,26 @@ class OpeningHour < ApplicationRecord
 
   validates_time :start_at, before: :end_at, unless: :is_closed
 
-  validates_uniqueness_of :day, scope: :shop_id, conditions: -> { where(is_closed: true) }, message: "can only have one closed time for a given day"
-  validates_uniqueness_of :day, scope: :shop_id, conditions: -> { where(is_closed: false) }, limit: 2, message: "can't have more than two opening hour for the same day"
+  validate :limited_number_of_hours
+  validate :no_overlapping_hours
 
-  # TO DO : make sure there is no overlaping hours for the same opening day
+  def limited_number_of_hours
+    hours = shop.opening_hours.where(day: day)
+
+    if is_closed && hours.count >= 1
+      errors.add(:base, "can only have one closed time for a given day")
+    elsif !is_closed && (hours.count >= 2 || hours.where(is_closed: true).count >= 1)
+      errors.add(:base, "can't have more than two opening hour for the same day")
+    end
+  end
+
+  def no_overlapping_hours
+    existing_hours = shop.opening_hours.where(day: day).first
+
+    if !is_closed && existing_hours
+      if (start_at - existing_hours.end_at) * (existing_hours.start_at - end_at) > 0
+        errors.add(:base, "overlapping hours on #{day}")
+      end
+    end
+  end
 end
