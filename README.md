@@ -1,25 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# OpeningHours 🚪🕰️
 
-Things you may want to cover:
+### Pré-requis
+- Ruby version 3.1.3
+- Rails version 6.1
+- Yarn
 
-* Ruby version
+### Installation
+1. Clonez le dépôt : `git clone https://github.com/USERNAME/OpeningHours.git`
+2. Entrez dans le répertoire du projet : `cd OpeningHours`
+3. Installez les dépendances : `bundle install`
+4. Installez les dépendances front-end : `yarn install`
+5. Préparez la base de données : `rails db:setup`
+6. Lancez le serveur : `rails s`
 
-* System dependencies
+### Utilisation
+- Accédez à l'application via [http://localhost:3000](http://localhost:3000)
+- Profitez ! 🎉
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# OpeningHours
