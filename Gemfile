@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.3'
 
+gem 'draper', '~> 4.0', '>= 4.0.2'
 gem 'enumerize', '~> 2.5'
 gem 'validates_timeliness', '~> 6.0'
 
