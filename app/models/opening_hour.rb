@@ -15,6 +15,20 @@ class OpeningHour < ApplicationRecord
   validate :limited_number_of_hours
   validate :no_overlapping_hours
 
+  def display_closed_day
+    "Fermé"
+  end
+
+  def display_start_at
+    self.start_at.strftime('%H:%M')
+  end
+
+  def display_end_at
+    self.end_at.strftime('%H:%M')
+  end
+
+  private
+
   def limited_number_of_hours
     hours = shop.opening_hours.where(day: day)
 
