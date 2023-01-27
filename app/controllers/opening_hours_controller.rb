@@ -20,5 +20,4 @@ class OpeningHoursController < ApplicationController
   def opening_hour_params
     params.require(:opening_hour).permit(:day, :is_closed, :start_at, :end_at)
   end
-
 end

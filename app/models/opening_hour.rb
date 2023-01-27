@@ -1,4 +1,6 @@
 class OpeningHour < ApplicationRecord
+  include Draper::Decoratable
+
   belongs_to :shop
 
   extend Enumerize
@@ -14,18 +16,6 @@ class OpeningHour < ApplicationRecord
 
   validate :limited_number_of_hours
   validate :no_overlapping_hours
-
-  def display_closed_day
-    "Fermé"
-  end
-
-  def display_start_at
-    start_at.strftime('%H:%M')
-  end
-
-  def display_end_at
-    end_at.strftime('%H:%M')
-  end
 
   private
 
