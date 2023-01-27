@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '3.1.3'
 
 gem 'enumerize', '~> 2.5'
 gem 'validates_timeliness', '~> 6.0'
