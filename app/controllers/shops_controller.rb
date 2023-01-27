@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @shop = Shop.find(params[:id])
+    @shop = Shop.find(params[:id]).decorate
   end
 
   def create

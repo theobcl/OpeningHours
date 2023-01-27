@@ -5,7 +5,7 @@ class OpeningHourDecorator < ApplicationDecorator
   end
 
   def display_start_at
-    start_at.strftime('%H:%M')
+    object.start_at.strftime('%H:%M')
   end
 
   def display_end_at

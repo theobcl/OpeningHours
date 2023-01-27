@@ -5,6 +5,7 @@ ruby '3.1.3'
 
 gem 'draper', '~> 4.0', '>= 4.0.2'
 gem 'enumerize', '~> 2.5'
+gem 'pry'
 gem 'validates_timeliness', '~> 6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
