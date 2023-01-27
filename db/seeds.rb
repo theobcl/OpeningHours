@@ -6,14 +6,12 @@ if Shop.any?
   puts "Shops destruction done"
 end
 
-puts "Create 10 shops"
-
-days = [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
+puts "Create 12 shops"
 
 12.times do
   shop = Shop.create(name: Faker::Company.name)
 
-  days.each do |day|
+  OpeningHour.day.values.each do |day|
     if rand(0..2) == 0
       shop.opening_hours.create(day: day, is_closed: true)
     elsif rand(0..2) == 1
