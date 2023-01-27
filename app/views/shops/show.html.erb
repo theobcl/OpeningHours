@@ -5,7 +5,14 @@
 
 <h4>Horaires d'ouverture :</h4>
 
-
-<p>Day: <%= @shop.opening_hours.first.day %></p>
-<p>Day: <%= @shop.opening_hours.first.start_at %></p>
-<p>Day: <%= @shop.opening_hours.first.end_at %></p>
+<% @shop.sorted_opening_hours_per_day.each do |day, opening_hours|%>
+  <% if opening_hours.size > 1 %>
+    <p><%= day %> : <%= opening_hours.first.start_at.strftime('%H:%M') %> - <%= opening_hours.first.end_at.strftime('%H:%M') %> | <%= opening_hours.last.start_at.strftime('%H:%M') %> : <%= opening_hours.last.end_at.strftime('%H:%M') %></p>
+  <% else %>
+    <% if opening_hours.first.is_closed %>
+      <p><%= day %> : Fermé</p>
+    <% else %>
+      <p><%= day %> : <%= opening_hours.first.start_at.strftime('%H:%M') %> - <%= opening_hours.first.end_at.strftime('%H:%M') %>
+    <% end %>
+  <% end %>
+<% end %>
