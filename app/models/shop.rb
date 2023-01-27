@@ -5,12 +5,8 @@ class Shop < ApplicationRecord
 
   # TO DO : make sure there at least an instance for each day of the week to validate a shop instance
 
-  def week_days()
-    self.opening_hours.day.values
-  end
-
   def sort_week_days()
-    week_days = week_days()
+    week_days = self.opening_hours.day.values
     index = week_days.index(Date.current.strftime("%A").downcase)
     return week_days.rotate(index)
   end
