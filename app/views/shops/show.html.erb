@@ -10,13 +10,13 @@
   <div <%= "class=fw-bold" if index == 0 %>>
     <% if slots.size > 1 %>
       <% first_slot, last_slot = slots %>
-      <p><%= day %> : <%= first_slot.first.display_start_at %> - <%= first_slot.first.display_end_at %>, <%= last_slot.first.display_start_at %> : <%= last_slot.first.display_end_at %></p>
+      <p><%= day %> : <%= first_slot.display_start_at %> - <%= first_slot.display_end_at %>, <%= last_slot.display_start_at %> : <%= last_slot.display_end_at %></p>
     <% else %>
       <% slot = slots.first %>
       <% if slot.is_closed %>
-        <p><%= day %>: <%= slot.first.display_closed_day %></p>
+        <p><%= day %>: <%= slot.display_closed_day %></p>
       <% else %>
-        <p><%= day %> : <%= slot.first.display_start_at %> - <%= slot.first.display_end_at %>
+        <p><%= day %> : <%= slot.display_start_at %> - <%= slot.display_end_at %>
       <% end %>
     <% end %>
   </div>
