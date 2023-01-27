@@ -20,11 +20,11 @@ class OpeningHour < ApplicationRecord
   end
 
   def display_start_at
-    self.start_at.strftime('%H:%M')
+    start_at.strftime('%H:%M')
   end
 
   def display_end_at
-    self.end_at.strftime('%H:%M')
+    end_at.strftime('%H:%M')
   end
 
   private
