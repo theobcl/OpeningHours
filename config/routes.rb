@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       resources :opening_hours, only: [:index]
     end
   end
+
+  get 'set_locale', to: 'application#set_locale', as: 'set_locale'
 end

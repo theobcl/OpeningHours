@@ -17,3 +17,7 @@ fr:
   sunday: "Dimanche"
 
   closed: "Fermé"
+
+  fr: "Francais 🇫🇷"
+  en: "English 🇬🇧"
+  change_language: "Changer"

@@ -12,6 +12,7 @@ module LeCollectionist
     config.load_defaults 6.1
 
     config.i18n.default_locale = :fr
+    config.i18n.available_locales = [:fr, :en]
 
     # Configuration for the application, engines, and railties goes here.
     #

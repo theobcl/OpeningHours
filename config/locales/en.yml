@@ -17,3 +17,7 @@ en:
   sunday: "Sunday"
 
   closed: "Closed"
+
+  fr: "Francais 🇫🇷"
+  en: "English 🇬🇧"
+  change_language: "Change"
