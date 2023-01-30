@@ -1,0 +1,19 @@
+fr:
+  title: "Opening Hours"
+  credits: "Application réalisée par Théophile Bancal"
+
+  shops: "Nos magasins :"
+  see_more: "Voir plus"
+
+  back_to_menu: "Retour à l'accueil"
+  opening_hours: "Horaires d'ouverture :"
+
+  monday: "Lundi"
+  tuesday: "Mardi"
+  wednesday: "Mercredi"
+  thursday: "Jeudi"
+  friday: "Vendredi"
+  saturday: "Samedi"
+  sunday: "Dimanche"
+
+  closed: "Fermé"

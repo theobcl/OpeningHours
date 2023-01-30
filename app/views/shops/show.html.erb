@@ -3,20 +3,20 @@
   <%= link_to "Retour à l'accueil", root_path %>
 </div>
 
-<h4>Horaires d'ouverture :</h4>
+<h4 class="mb-4"><%= t("opening_hours") %></h4>
 
 <% @shop.sorted_opening_hours_per_day.each_with_index do |opening_hours, index|%>
   <% day, slots = opening_hours %>
   <div <%= "class=fw-bold" if index == 0 %>>
     <% if slots.size > 1 %>
       <% first_slot, last_slot = slots %>
-      <p><%= day %> : <%= first_slot.display_start_at %> - <%= first_slot.display_end_at %>, <%= last_slot.display_start_at %> : <%= last_slot.display_end_at %></p>
+      <p><%= t("#{day}") %> : <%= first_slot.display_start_at %> - <%= first_slot.display_end_at %>, <%= last_slot.display_start_at %> : <%= last_slot.display_end_at %></p>
     <% else %>
       <% slot = slots.first %>
       <% if slot.is_closed %>
-        <p><%= day %>: <%= slot.display_closed_day %></p>
+        <p><%= t("#{day}") %>: <%= slot.display_closed_day %></p>
       <% else %>
-        <p><%= day %> : <%= slot.display_start_at %> - <%= slot.display_end_at %>
+        <p><%= t("#{day}") %> : <%= slot.display_start_at %> - <%= slot.display_end_at %>
       <% end %>
     <% end %>
   </div>
