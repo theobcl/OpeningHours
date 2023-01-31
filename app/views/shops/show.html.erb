@@ -1,23 +1,39 @@
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex justify-content-between align-items-center mb-5">
   <h2><%= @shop.name %></h2>
   <%= link_to t("back_to_menu"), root_path, class:"btn btn-secondary" %>
 </div>
 
-<h4 class="mb-4"><%= t("opening_hours") %></h4>
+<div class="d-lg-flex align-items-center justify-content-between">
+  <div>
+    <%= image_tag("image.jpg", alt: "shop picture", class:"rounded mb-2 img-size") %>
+  </div>
+  <div class="w-100">
+    <h4 class="text-center mb-4"><%= t("opening_hours") %></h4>
 
-<% @shop.sorted_opening_hours_per_day.each_with_index do |opening_hours, index|%>
-  <% day, slots = opening_hours %>
-  <div <%= "class=fw-bold" if index == 0 %>>
-    <% if slots.size > 1 %>
-      <% first_slot, last_slot = slots %>
-      <p><%= t("#{day}") %> : <%= first_slot.display_start_at %> - <%= first_slot.display_end_at %>, <%= last_slot.display_start_at %> : <%= last_slot.display_end_at %></p>
-    <% else %>
-      <% slot = slots.first %>
-      <% if slot.is_closed %>
-        <p><%= t("#{day}") %>: <%= slot.display_closed_day %></p>
-      <% else %>
-        <p><%= t("#{day}") %> : <%= slot.display_start_at %> - <%= slot.display_end_at %>
-      <% end %>
+    <% @shop.sorted_opening_hours_per_day.each_with_index do |opening_hours, index|%>
+      <% day, slots = opening_hours %>
+      <div <%= "class=fw-bold" if index == 0 %>>
+        <% if slots.size > 1 %>
+          <% first_slot, last_slot = slots %>
+          <div class="row">
+            <p class="col-lg-6 text-lg-end"><%= t("#{day}") %> : </p>
+            <p class="col-lg-6"><%= first_slot.display_start_at %> - <%= first_slot.display_end_at %>, <%= last_slot.display_start_at %> : <%= last_slot.display_end_at %></p>
+          </div>
+        <% else %>
+          <% slot = slots.first %>
+          <% if slot.is_closed %>
+            <div class="row">
+              <p class="col-lg-6 text-lg-end"><%= t("#{day}") %> : </p>
+              <p class="col-lg-6"><%= slot.display_closed_day %></p>
+            </div>
+          <% else %>
+            <div class="row">
+              <p class="col-lg-6 text-lg-end"><%= t("#{day}") %> : </p>
+              <p class="col-lg-6"><%= slot.display_start_at %> - <%= slot.display_end_at %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
-<% end %>
+</div>
