@@ -1,11 +1,11 @@
 <h1 class="mb-4"><%= t("shops") %></h1>
-<div class="row d-flex justify-content-between">
+<div class="row g-5">
   <% @shops.each do |shop| %>
-    <div class="card col-4 mb-4 p-0" style="width: 18rem;">
-      <%= image_tag("image.jpg", class:"card-img-top", alt: "shop picture") %>
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <%= image_tag("image.jpg", class:"card-img-top rounded mb-3", alt: "shop picture") %>
       <div class="card-body d-flex justify-content-center flex-column">
         <h5 class="card-title text-center mb-3"><%= shop.name %></h5>
-        <%= link_to t("see_more"), shop_path(shop), class: "btn btn-secondary" %>
+        <%= link_to t("see_more"), shop_path(shop), class: "btn btn-secondary mx-auto w-75" %>
       </div>
     </div>
   <% end %>
