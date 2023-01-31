@@ -8,7 +8,7 @@ class ShopsController < ApplicationController
   end
 
   def create
-    @shop = shop.new(shop_params)
+    @shop = Shop.new(shop_params)
     @shop.save
   end
 
