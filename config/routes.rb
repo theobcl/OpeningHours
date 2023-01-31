@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'set_locale', to: 'application#set_locale', as: 'set_locale'
+  post "languages/update", to: "languages#update"
 end

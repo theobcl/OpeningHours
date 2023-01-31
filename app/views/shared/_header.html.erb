@@ -2,9 +2,11 @@
   <div class="container-fluid d-flex justify-content-between">
     <%= link_to t("title"), root_path, class: "navbar-brand text-white" %>
 
-    <%= form_tag url_for(locale: nil), method: :get, class: "d-flex" do %>
+    <%= form_tag languages_update_path, method: :post, class: "d-flex" do %>
       <%= select_tag :locale, options_for_select(I18n.available_locales.map { |locale| [I18n.t(locale), locale] }, I18n.locale), class: "form-control mx-2 bg-dark text-white" %>
-      <%= submit_tag t("change_language"), class:"btn btn-primary"%>
+      <%= submit_tag t("change_language"), class:"btn btn-primary" %>
     <% end %>
   </div>
+
+  <p class="text-primary"><%= session[:locale] %><%= I18n.locale %></p>
 </nav>
