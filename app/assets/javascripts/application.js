@@ -1,2 +1,2 @@
-//= require jquery/dist/jquery
+//= require jquery3
 //= require change_language
